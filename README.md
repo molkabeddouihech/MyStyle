@@ -11,14 +11,14 @@
 ✅ Des **conseils d'experts** en nutrition et bien-être  
 ✅ Une **marketplace** dédiée aux professionnels (restaurants, hôtels, entreprises)  
 
-🎯 **Objectif :** Simplifier l’adoption d’une alimentation équilibrée et responsable pour tous.  
+🌟 **Objectif :** Simplifier l’adoption d’une alimentation équilibrée et responsable pour tous.  
 
 ---
 
-## 📜 Table des Matières  
+## 📚 Table des Matières  
 
 - [🚀 Installation](#-installation)  
-- [📖 Utilisation](#-utilisation)  
+- [📚 Utilisation](#-utilisation)  
 - [💡 Fonctionnalités](#-fonctionnalités)  
 - [🤝 Contribution](#-contribution)  
 - [📄 Licence](#-licence)  
@@ -34,52 +34,68 @@ Avant de commencer, assurez-vous d’avoir installé :
 - Un gestionnaire de paquets comme **npm** ou **yarn**  
 
 ### 2️⃣ Cloner le repository  
-```bash
-git clone https://github.com/TonGitHub/PureVibe.git
-cd PureVibe
+```bash  
+git clone https://github.com/TonGitHub/PureVibe.git  
+cd PureVibe  
+```
 
-### 3️⃣ Installer les dépendances
-npm install  # ou yarn install
+### 3️⃣ Installer les dépendances  
+```bash  
+npm install  # ou yarn install  
+```
 
-### 4️⃣ Lancer le projet
-npm start  # ou yarn start
+### 4️⃣ Lancer le projet  
+```bash  
+npm start  # ou yarn start  
+```
 
-##  📖 Utilisation
-Créer un compte pour personnaliser votre expérience
+---
 
-Explorer la boutique bio et commander des produits sains
+## 📚 Utilisation  
 
-Recevoir des recommandations de repas en fonction de vos préférences
+- Créer un compte pour personnaliser votre expérience  
+- Explorer la boutique bio et commander des produits sains  
+- Recevoir des recommandations de repas en fonction de vos préférences  
+- Consulter des recettes adaptées et cuisiner facilement  
+- Suivre les conseils d’experts pour une alimentation équilibrée  
+- Accéder à la marketplace pour collaborer avec des professionnels du secteur  
 
-Consulter des recettes adaptées et cuisiner facilement
+---
 
-Suivre les conseils d’experts pour une alimentation équilibrée
+## 💡 Fonctionnalités  
 
-Accéder à la marketplace pour collaborer avec des professionnels du secteur
+✅ Sélection de produits bio certifiés 🌱  
+✅ Recommandations de repas personnalisées 🍽️  
+✅ Recettes adaptées à vos préférences alimentaires 📖  
+✅ Espace de conseils et accompagnement nutritionnel 🧥  
+✅ Marketplace pour les professionnels de la restauration et de l'hôtellerie 🏨  
 
-## 💡 Fonctionnalités
-✅ Sélection de produits bio certifiés 🌱
-✅ Recommandations de repas personnalisées 🍽️
-✅ Recettes adaptées à vos préférences alimentaires 📖
-✅ Espace de conseils et accompagnement nutritionnel 🩺
-✅ Marketplace pour les professionnels de la restauration et de l'hôtellerie 🏨
+---
 
-## 🤝 Contribution
-Nous encourageons les contributions ! 🎉
+## 🤝 Contribution  
 
-Forker le projet
+Nous encourageons les contributions ! 🎉  
 
-Créer une branche (git checkout -b feature-nouvelle-fonctionnalité)
+1. Forker le projet  
+2. Créer une branche  
+```bash  
+git checkout -b feature-nouvelle-fonctionnalité  
+```
+3. Commiter vos modifications  
+```bash  
+git commit -m "Ajout d'une nouvelle fonctionnalité"  
+```
+4. Pusher la branche  
+```bash  
+git push origin feature-nouvelle-fonctionnalité  
+```
+5. Créer une Pull Request  
 
-Committer (git commit -m "Ajout d'une nouvelle fonctionnalité")
+Merci de respecter les bonnes pratiques de développement et de documentation.  
 
-Pusher (git push origin feature-nouvelle-fonctionnalité)
+---
 
-Créer une Pull Request
+## 📄 Licence  
 
-Merci de respecter les bonnes pratiques de développement et de documentation.
-
-## 📄 Licence
-Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus de détails.
-
+Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus de détails.  
 
