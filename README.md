@@ -56,7 +56,7 @@ ng serve
 ```
 L’application sera accessible sur http://localhost:4200.
 
-##📚 Utilisation
+## 📚 Utilisation
 Explorez la collection d’accessoires par catégorie, genre ou prix
 
 Ajoutez vos articles préférés au panier
@@ -65,7 +65,7 @@ Gérez les produits depuis le backend (CRUD + stock)
 
 Profitez d’une navigation fluide et rapide entre les pages grâce à Angular
 
-##💡 Fonctionnalités:
+## 💡 Fonctionnalités:
 
 ✅ Frontend en Angular (SPA)
 
@@ -81,7 +81,7 @@ Profitez d’une navigation fluide et rapide entre les pages grâce à Angular
 
 ✅ Architecture backend MVC claire et modulaire
 
-##🤝 Contribution
+## 🤝 Contribution
 Les contributions sont les bienvenues ! 🙌
 
 1.Forkez le dépôt
@@ -105,6 +105,8 @@ git push origin feature/ma-nouvelle-fonction
 
 Merci de respecter les bonnes pratiques de développement.
 
-##📄 Licence
+## 📄 Licence
 Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus d'informations.
+
+
 ---
