@@ -1,0 +1,97 @@
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center py-5">
+        <h1 class="display-3 text-white mb-4 animated slideInDown">"Votre coup de cœur vous attend"</h1>
+        <h6 class="kokok">Naturel / Excellence / Rapide</h6>
+    </div>
+</div>
+<!-- Page Header End -->
+ <br>
+<!-- Feature Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row gx-0">
+                <div class="col-lg-4 wow fadeIn feature-col" data-wow-delay="0.1s">
+                    <div class="bg-white shadow d-flex align-items-center h-100 px-5" style="min-height: 160px;">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
+                                <i class="fa fa-times text-primary"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h4>Ne passez pas à côté !</h4>
+                                <span>Le bon choix, c’est ici.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeIn feature-col" data-wow-delay="0.3s">
+                    <div class="bg-white shadow d-flex align-items-center h-100 px-5" style="min-height: 160px;">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
+                                <i class="fa fa-users text-primary"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h4>Faites-vous plaisir dès maintenant !</h4>
+                                <span>Nous vous offrons le meilleur.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeIn feature-col" data-wow-delay="0.5s">
+                    <div class="bg-white shadow d-flex align-items-center h-100 px-5" style="min-height: 160px;">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
+                                <i class="fa fa-phone text-primary"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h4>24/7 Disponible </h4>
+                                <span>Nous sommes là pour vous.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+<br>
+
+ 
+
+
+<!-- Facts Start -->
+    <div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="../../assets/images/femmehomme3.jpg">
+        <div class="container-fluid facts my-5 py-5">
+            <div class="row g-5">
+                <h1 style="color: white; text-align: center; margin: 0; line-height: 1.5;">Laissez parler votre style !</h1>
+                <form id="searchForm" class="search-bar"(submit)="$event.preventDefault()">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Mystyle... Trouvez tout, à votre style."[(ngModel)]="searchTerm"
+                      name="search">
+                    <select id="categorySelect" [(ngModel)]="genreFiltre" name="genreFiltre">
+    <option [ngValue]="null">Toutes les genres</option>
+    <option value="femme">Femme</option>
+    <option value="homme">Homme</option>
+    <option value="mixte">Mixte</option>
+</select>
+                   
+                </form>
+                
+
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
+
+<!-- Grille des produits -->
+<div class="produits-grid">
+  <div class="produit-card" *ngFor="let p of produitsFiltres">
+    <img [src]="'http://localhost/project_angular/back/View/img/' + p.image" alt="{{ p.titre }}">
+    <div class="produit-info">
+      <h3>{{ p.titre }}</h3>
+      <p class="prix">{{ p.prix }} DT</p>
+    </div>
+    <button class="panier-btn" (click)="ajouterAuPanier(p)" title="Ajouter au panier">
+      <span class="material-icons">shopping_cart</span>
+    </button>
+  </div>
+</div>
