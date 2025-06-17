@@ -1,21 +1,24 @@
-# 🥗 PureVibe – Votre Accès Simplifié à une Alimentation Saine  
+# 💼 MyStyle – L’Essence de Votre Style au Quotidien
 
-> **Une plateforme tout-en-un pour une alimentation équilibrée, responsable et accessible à tous.**  
-
-## 🌍 À propos  
-
-**PureVibe** centralise l'accès à une alimentation saine en combinant :  
-✅ Une **boutique bio** avec des produits de qualité  
-✅ Des **repas personnalisés** selon vos besoins nutritionnels  
-✅ Des **recettes adaptées** à vos préférences alimentaires  
-✅ Des **conseils d'experts** en nutrition et bien-être  
-✅ Une **marketplace** dédiée aux professionnels (restaurants, hôtels, entreprises)  
-
-🌟 **Objectif :** Simplifier l’adoption d’une alimentation équilibrée et responsable pour tous.  
+> **Une boutique en ligne moderne pour découvrir, aimer et acheter des accessoires uniques qui vous ressemblent.**
 
 ---
 
-## 📚 Table des Matières  
+## 🌍 À propos
+
+**MyStyle** est une plateforme e-commerce dédiée aux **accessoires de mode**, pensée pour offrir une **expérience utilisateur fluide**, **esthétique** et **pratique**.
+
+- ✅ Interface moderne construite avec **Angular**
+- ✅ Navigation fluide pour découvrir facilement vos articles favoris
+- ✅ Gestion de stock intelligente en temps réel
+- ✅ Connexion front-back sécurisée via **API REST**
+- ✅ Design responsive adapté à tous les écrans
+
+🎯 **Objectif** : Offrir une expérience de shopping simple, rapide et stylée pour tous les passionnés d’accessoires.
+
+---
+
+## 📚 Table des Matières
 
 - [🚀 Installation](#-installation)  
 - [📚 Utilisation](#-utilisation)  
@@ -25,77 +28,87 @@
 
 ---
 
-## 🚀 Installation  
+## 🚀 Installation
 
-### 1️⃣ Prérequis  
-Avant de commencer, assurez-vous d’avoir installé :  
-- [Node.js](https://nodejs.org/)  
-- [Git](https://git-scm.com/)  
-- Un gestionnaire de paquets comme **npm** ou **yarn**  
+### 1️⃣ Prérequis
 
-### 2️⃣ Cloner le repository  
-```bash  
-git clone https://github.com/TonGitHub/PureVibe.git  
-cd PureVibe  
-```
+Avant de commencer, assurez-vous d’avoir installé :
 
-### 3️⃣ Installer les dépendances  
-```bash  
-npm install  # ou yarn install  
-```
+- [Node.js](https://nodejs.org/)
+- [Angular CLI](https://angular.io/cli)
+- [Git](https://git-scm.com/)
+- Un gestionnaire de paquets comme **npm** ou **yarn**
+- Un backend MVC (ex: PHP, Java, Node.js Express...)
 
-### 4️⃣ Lancer le projet  
-```bash  
-npm start  # ou yarn start  
-```
+### 2️⃣ Cloner le projet
+
+```bash
+git clone https://github.com/TonGitHub/MyStyle.git
+cd MyStyle
+3️⃣ Installer les dépendances
+bash
+Copier
+Modifier
+npm install
+4️⃣ Lancer l’application Angular
+bash
+Copier
+Modifier
+ng serve
+L’application sera accessible sur http://localhost:4200.
+
+📚 Utilisation
+Explorez la collection d’accessoires par catégorie, genre ou prix
+
+Ajoutez vos articles préférés au panier
+
+Gérez les produits depuis le backend (CRUD + stock)
+
+Profitez d’une navigation fluide et rapide entre les pages grâce à Angular
+
+💡 Fonctionnalités
+✅ Frontend en Angular (SPA)
+
+✅ Composants réutilisables
+
+✅ API REST pour la communication front ↔ back
+
+✅ Filtrage, tri et recherche dynamique des produits
+
+✅ Affichage responsive et esthétique (mobile / desktop)
+
+✅ Stock mis à jour automatiquement après achat
+
+✅ Architecture backend MVC claire et modulaire
+
+🤝 Contribution
+Les contributions sont les bienvenues ! 🙌
+
+Forkez le dépôt
+
+Créez une branche
+
+bash
+Copier
+Modifier
+git checkout -b feature/ma-nouvelle-fonction
+Commitez vos modifications
+
+bash
+Copier
+Modifier
+git commit -m "Ajout d'une nouvelle fonctionnalité"
+Pushez la branche
+
+bash
+Copier
+Modifier
+git push origin feature/ma-nouvelle-fonction
+Créez une Pull Request
+
+Merci de respecter les bonnes pratiques de développement.
+
+📄 Licence
+Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus d'informations.
 
 ---
-
-## 📚 Utilisation  
-
-- Créer un compte pour personnaliser votre expérience  
-- Explorer la boutique bio et commander des produits sains  
-- Recevoir des recommandations de repas en fonction de vos préférences  
-- Consulter des recettes adaptées et cuisiner facilement  
-- Suivre les conseils d’experts pour une alimentation équilibrée  
-- Accéder à la marketplace pour collaborer avec des professionnels du secteur  
-
----
-
-## 💡 Fonctionnalités  
-
-✅ Sélection de produits bio certifiés 🌱  
-✅ Recommandations de repas personnalisées 🍽️  
-✅ Recettes adaptées à vos préférences alimentaires 📖  
-✅ Espace de conseils et accompagnement nutritionnel 🧥  
-✅ Marketplace pour les professionnels de la restauration et de l'hôtellerie 🏨  
-
----
-
-## 🤝 Contribution  
-
-Nous encourageons les contributions ! 🎉  
-
-1. Forker le projet  
-2. Créer une branche  
-```bash  
-git checkout -b feature-nouvelle-fonctionnalité  
-```
-3. Commiter vos modifications  
-```bash  
-git commit -m "Ajout d'une nouvelle fonctionnalité"  
-```
-4. Pusher la branche  
-```bash  
-git push origin feature-nouvelle-fonctionnalité  
-```
-5. Créer une Pull Request  
-
-Merci de respecter les bonnes pratiques de développement et de documentation.  
-
----
-
-## 📄 Licence  
-
-Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus de détails.  
-
