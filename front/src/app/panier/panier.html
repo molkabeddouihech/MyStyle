@@ -1,0 +1,188 @@
+<!-- Bannière commune (toujours affichée) -->
+<div style="
+  background: 
+    linear-gradient(to bottom, #000 1px, transparent 1px),
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('assets/images/femmehomme1.jpg') no-repeat center top / cover;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+">
+  <h1 style="margin: 0; font-size: 2.8em; text-shadow: 0 2px 5px #000;">
+    {{ getTitrePageActuelle() }}
+  </h1>
+  <p style="margin: 10px 0 0; font-style: italic; font-size: 1.3em;">
+    {{ getSousTitrePageActuelle() }}
+  </p>
+</div>
+
+<!-- Affichage conditionnel : soit le panier, soit le récapitulatif -->
+<div *ngIf="!afficherRecapitulatif">
+  
+  <div class="panier-container" [class.dark]="darkMode">
+
+    <div *ngIf="panier.length > 0; else panierVide">
+
+      <!-- Liste des produits dans le panier -->
+      <div *ngFor="let item of panier" class="produit-panier">
+        <div class="produit-image">
+          <img [src]="item.image" [alt]="item.nom" />
+        </div>
+        <div class="produit-info">
+          <h3>{{ item.nom }}</h3>
+          <p class="prix-online">Prix unitaire: {{ item.prix | number:'1.2-2' }} DT</p>
+          <div class="quantite-controls">
+            <button (click)="retirerUnite(item.id)">-</button>
+            <span>{{ item.quantite }}</span>
+            <button (click)="ajouterUnite(item.id)">+</button>
+          </div>
+        </div>
+        <div class="produit-prix">
+          <span class="prix">{{ (item.prix * item.quantite) | number:'1.2-2' }} DT</span>
+          <button (click)="supprimerDuPanier(item.id)" class="btn-supprimer" [attr.aria-label]="'Supprimer ' + item.nom">
+            <span class="material-icons">delete</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Section code promo -->
+      <div class="code-promo">
+        <h3>Code Promo (optionnel) :</h3>
+        <div class="input-group">
+          <input type="text" [(ngModel)]="codePromoSaisi" placeholder="ENTREZ VOTRE CODE PROMO" />
+          <button class="btn-apply" (click)="appliquerCodePromo()">APPLIQUER</button>
+        </div>
+        <p *ngIf="promoMessage" [ngClass]="{'promo-success': promoValide, 'promo-error': !promoValide}">
+          {{ promoMessage }}
+        </p>
+      </div>
+
+      <!-- Résumé des prix -->
+      <div class="sous-total">
+        <div class="ligne">
+          <span>Sous-total :</span>
+          <span>{{ panierService.getTotalPanier() | number:'1.2-2' }} DT</span>
+        </div>
+        <div class="ligne" *ngIf="reduction > 0">
+          <span>Réduction :</span>
+          <span class="reduction">-{{ reduction | number:'1.2-2' }} DT</span>
+        </div>
+        <div class="ligne">
+          <span>Frais de livraison :</span>
+          <span>7.00 DT</span>
+        </div>
+      </div>
+
+      <div class="total">
+        <h3>Total :</h3>
+        <span class="montant-total">{{ getTotalPanier() + 7 | number:'1.2-2' }} DT</span>
+      </div>
+
+      <!-- Détails de la commande -->
+      <div class="details-commande">
+        <h3>Détails de la commande :</h3>
+
+        <div class="resume">
+          <div class="commande-info">
+            <div class="date-commande">
+              <label>Date de commande :</label>
+              <span [attr.data-date]="today | date:'yyyy-MM-dd'" [attr.data-time]="today | date:'HH:mm:ss'"></span>
+            </div>
+
+            <div class="articles">
+              <p>Articles commandés :</p>
+              <ul>
+                <li *ngFor="let item of panier">
+                  <span>{{ item.nom }} - {{ item.quantite }} x {{ item.prix | number:'1.2-2' }} DT</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="statut-commande">
+              <strong>Statut :</strong> En attente
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire coordonnées client -->
+      <div class="coordonnees">
+        <h3>Vos coordonnées :</h3>
+
+        
+
+        <div class="form-group">
+          <label for="email">E-mail :</label>
+          <input type="email" id="email" [(ngModel)]="emailClient" name="email"
+            [class.input-invalid]="formSubmitted && !emailValide" />
+          <div class="error-message" *ngIf="formSubmitted && !emailValide">
+            Email invalide
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-continuer" (click)="continuerCommande()" [disabled]="enregistrementEnCours">
+        {{ enregistrementEnCours ? 'Enregistrement en cours...' : 'Continuer la commande' }}
+      </button>
+    </div>
+
+    <!-- Message si panier vide -->
+    <ng-template #panierVide>
+      <div class="panier-vide">
+        <p>Votre panier est vide.</p>
+        <a routerLink="/produits" class="btn-produits">Voir nos produits</a>
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+<!-- Récapitulatif de commande -->
+<div *ngIf="afficherRecapitulatif">
+  <app-recapitulatif-commande 
+    [infosCommande]="infosCommandeRecap"
+    (livraisonAffichee)="onLivraisonAffichee($event)"
+    (paiementAffiche)="onPaiementAffiche($event)"
+    (naviguerVersAccueil)="changePage('home')">
+  </app-recapitulatif-commande>
+  
+  <!-- Boutons de navigation (affichés seulement si on n'est pas dans la livraison ou le paiement) -->
+  <div *ngIf="!afficherLivraison && !afficherPaiement" style="text-align: center; margin: 20px 0; padding: 20px;">
+    <button 
+      (click)="retourAuPanier()" 
+      style="
+        margin-right: 15px; 
+        padding: 12px 25px; 
+        background: #6c757d; 
+        color: white; 
+        border: none; 
+        border-radius: 8px; 
+        font-size: 16px; 
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      "
+      onmouseover="this.style.backgroundColor='#5a6268'"
+      onmouseout="this.style.backgroundColor='#6c757d'">
+      ← Retour au panier
+    </button>
+    <button 
+      (click)="finaliserCommande()" 
+      style="
+        padding: 12px 25px; 
+        background: #5e17eb; 
+        color: white; 
+        border: none; 
+        border-radius: 8px; 
+        font-size: 16px; 
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      "
+      onmouseover="this.style.backgroundColor='#4a12c4'"
+      onmouseout="this.style.backgroundColor='#5e17eb'">
+      Finaliser la commande
+    </button>
+  </div>
+</div>

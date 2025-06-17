@@ -1,0 +1,116 @@
+/* Produits Section */
+.produits-section {
+  width: 100%;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.produits-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.panier-info {
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.filtres {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.filtres button {
+  padding: 10px 20px;
+  background-color: #eee;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filtres button.active {
+  background-color: #5e17eb;
+  color: white;
+}
+
+.produits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.produit-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.produit-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.produit-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.prix {
+  color: #5e17eb;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.couleurs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.couleur-pastille {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #eee;
+}
+
+.panier-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5e17eb);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.panier-btn:hover {
+  transform: scale(1.1);
+}
