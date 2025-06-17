@@ -2,6 +2,7 @@
 session_start();
 
 include '../Controller/produitc.php';
+require_once __DIR__ . '/../../config.php';
 
 $controller = new ProduitController();
 $produits = $controller->getAllProduits();
@@ -87,7 +88,7 @@ if (!isset($produitToEdit) && isset($_SESSION['form_data'])) {
     <meta name="author" content="">
 
     <title>MyStyle</title>
-    <link rel="icon" type="image/png" href="../View/img/logoo.png">
+    <link rel="icon" type="image/png" href="../View/img/logo.png">
    
 
     <!-- Custom fonts for this template-->
@@ -270,6 +271,21 @@ if (!isset($produitToEdit) && isset($_SESSION['form_data'])) {
                 Interface
             </div>
 
+            <!-- Nav Item - Gestion des Utilisateurs -->
+                <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReclamations"
+                    aria-expanded="true" aria-controls="collapseReclamations">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span><strong>Gestion des Utilisateurs </strong></span>
+                </a>
+                <div id="collapseReclamations" class="collapse" aria-labelledby="headingReclamations" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header" style="color: #5e17eb;">Gestion des utilisateurs</h6>
+                        <a class="collapse-item" href="utilisateur.php">Utilisateurs</a>
+                        
+                    </div>
+                </div>
+            </li>
              
                
             <!-- Nav Item - Gestion des Produits et Dépôts -->
@@ -282,11 +298,29 @@ if (!isset($produitToEdit) && isset($_SESSION['form_data'])) {
                 <div id="collapseGestion" class="collapse" aria-labelledby="headingGestion"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Gestion des Entités:</h6>
+                        <h6 class="collapse-header" style="color: #5e17eb;">Gestion des entités :</h6>
                         <a class="collapse-item" href="produit.php">Produits</a>
                     </div>
                 </div>
             </li>
+
+            <!-- Nav Item - Gestion des Livraisons et Commandes -->
+          <li class="nav-item">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLivraison"
+                  aria-expanded="true" aria-controls="collapseLivraison">
+                  <i class="fas fa-fw fa-box"></i>
+                  <span><strong>Gestion de Livraison</strong></span>
+              </a>
+              <div id="collapseLivraison" class="collapse" aria-labelledby="headingLivraison" data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                      <h6 class="collapse-header" style="color: #5e17eb;">Les commandes:</h6>
+                      <a class="collapse-item" href="commande.php">Commande</a>
+                      <a class="collapse-item" href="livraison.php">Livraison</a>
+                      <a class="collapse-item" href="paiement.php">Paiements</a>
+                      <a class="collapse-item" href="promo.php">code promo</a>
+                  </div>
+              </div>
+          </li>
             
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

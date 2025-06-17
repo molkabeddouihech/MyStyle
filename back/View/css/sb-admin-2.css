@@ -11280,7 +11280,6 @@ body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
 
-
 /***************************/
 .btn-orange {
   background-color: orange;
@@ -11341,4 +11340,3 @@ th a {
 th a:hover {
   color: orange !important;
 }
-

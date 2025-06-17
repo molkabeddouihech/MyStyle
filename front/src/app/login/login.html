@@ -1,0 +1,59 @@
+<!-- Bannière commune (toujours affichée) -->
+<div style="
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background:
+    linear-gradient(to bottom, #000 1px, transparent 1px),
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('assets/images/femmehomme1.jpg') no-repeat center top / cover;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+">
+  <h1 style="margin: 0; font-size: 2.8em; text-shadow: 0 2px 5px #000;">Connectez-vous</h1>
+  <p style="margin: 10px 0 0; font-style: italic; font-size: 1.3em;">
+    Bienvenue ! Connectez-vous pour accéder à votre espace personnel.
+  </p>
+</div> 
+<div class="container">
+
+  <div class="header">
+    <h1 class="title">Connexion</h1>
+    <p class="subtitle">Accédez à votre espace personnel</p>
+  </div>
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <div class="form-group">
+      <label for="email">Adresse email</label>
+      <input type="email" id="email" name="email" required [(ngModel)]="email" />
+    </div>
+    <div class="form-group password-container">
+      <label for="password">Mot de passe</label>
+      <input [type]="afficherMotDePasse ? 'text' : 'password'" id="password" name="password" required [(ngModel)]="password" />
+      <button type="button" (click)="togglePassword()" class="password-toggle">
+        {{ afficherMotDePasse ? 'Masquer' : 'Afficher' }}
+      </button>
+    </div>
+    <button type="submit" class="login-btn" [disabled]="loading">
+      {{ loading ? 'Connexion en cours...' : 'Se connecter' }}
+    </button>
+  </form>
+  <div *ngIf="message" [ngClass]="{'error-message': messageType === 'error', 'success-message': messageType === 'success'}">
+    {{ message }}
+  </div>
+  <div class="links">
+    <!-- Lien mot de passe oublié supprimé -->
+    <div class="signup-link">
+      <p>Tu n'as pas de compte ?</p>
+      <a href="#" class="signup-btn" (click)="afficherInscription = true">S'inscrire</a>
+    </div>
+  </div>
+  <app-inscription *ngIf="afficherInscription"></app-inscription>
+</div>

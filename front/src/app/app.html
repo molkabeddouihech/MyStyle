@@ -1,15 +1,19 @@
 <div [class.dark]="darkMode">
   <!-- Navigation -->
   <nav>
-    <img src="assets/images/logo.png" alt="Logo Accessoria" class="logo-img">
+    <img src="assets/images/logo.png" alt="Logo My Style" class="logo-img">
     
     <div class="nav-right">
       <button (click)="changePage('home')">Accueil</button>
       <button (click)="changePage('produits')">Produits</button>
       <button (click)="changePage('contact')">Contact</button>
-      <button (click)="changePage('panier')">🛒Panier ({{ panier.length }})</button>
+      <button (click)="changePage('panier')">
+        🛒 Panier ({{ getNombreTotalProduits() }})
+      </button>
       
-      <button class="action-btn"(click)="changePage('connexion')"><span class="icon">👤</span></button>
+      <button class="action-btn" (click)="changePage('connexion')">
+        <span class="icon">👤</span>
+      </button>
     </div>
   </nav>
 
@@ -26,13 +30,10 @@
               <div class="text-center text-white">
                 <h1 class="display-1 mb-3 animated slideInDown">Accessoires de Rêve</h1>
                 <p class="lead mb-4 animated fadeInUp">
-                  Découvrez notre collection exclusive d'accessoires féminins. Bijoux scintillants, sacs tendance et
-                  lunettes chic pour sublimer votre style.
+                  "Découvrez notre collection élégante et tendance d'accessoires pour hommes et femmes – pour affirmer votre style au quotidien."
                 </p>
                 <div class="d-flex justify-content-center gap-3">
-                  <button class="btn btn-primary btn-violet" (click)="currentPage = 'produits'">
-  Découvrir la Collection
-</button>
+                  <button class="btn btn-primary" (click)="changePage('produits')">Découvrir la Collection</button>
                 </div>
               </div>
             </div>
@@ -43,7 +44,7 @@
             <img class="carousel-img" src="assets/images/femmehomme2.jpg" alt="Image">
             <div class="carousel-caption">
               <div class="text-center text-white">
-                <h1 class="display-1 mb-3 animated slideInDown">L’élégance est dans les détails</h1>
+                <h1 class="display-1 mb-3 animated slideInDown">"Ton style, ton attitude, nos accessoires."</h1>
               </div>
             </div>
           </div>
@@ -61,56 +62,53 @@
       </div>
     </div>
 
-    <!-- Top Feature Start - Plein écran -->
-    <div class="top-feature">
-      <div class="feature-container">
-        <div class="feature-row">
-          <div class="feature-col">
-            <div class="feature-item">
-              <div class="d-flex">
-                <div class="feature-icon">
-                  <i class="fa fa-times text-primary"></i>
+    <!-- Feature Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row gx-0">
+                <div class="col-lg-4 wow fadeIn feature-col" data-wow-delay="0.1s">
+                    <div class="bg-white shadow d-flex align-items-center h-100 px-5" style="min-height: 160px;">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
+                                <i class="fa fa-times text-primary"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h4>Ne passez pas à côté !</h4>
+                                <span>Le bon choix, c’est ici.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="ps-3">
-                    <br>
-                  <h4>Pas de coût caché</h4>
-                  <span></span>
+                <div class="col-lg-4 wow fadeIn feature-col" data-wow-delay="0.3s">
+                    <div class="bg-white shadow d-flex align-items-center h-100 px-5" style="min-height: 160px;">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
+                                <i class="fa fa-users text-primary"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h4>Faites-vous plaisir dès maintenant !</h4>
+                                <span>Nous vous offrons le meilleur.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class="col-lg-4 wow fadeIn feature-col" data-wow-delay="0.5s">
+                    <div class="bg-white shadow d-flex align-items-center h-100 px-5" style="min-height: 160px;">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
+                                <i class="fa fa-phone text-primary"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h4>24/7 Disponible </h4>
+                                <span>Nous sommes là pour vous.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="feature-col">
-            <div class="feature-item">
-              <div class="d-flex">
-                <div class="feature-icon">
-                  <i class="fa fa-users text-primary"></i>
-                </div>
-                <div class="ps-3">
-                    <br>
-                  <h4>Équipe dédiée</h4>
-                  <span></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="feature-col">
-            <div class="feature-item">
-              <div class="d-flex">
-                <div class="feature-icon">
-                  <i class="fa fa-phone text-primary"></i>
-                </div>
-                <div class="ps-3">
-                    <br>
-                  <h4>Disponible 24h/24 et 7j/7</h4>
-                  <span></span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-    <!-- Top Feature End -->
+    <!-- Feature End -->
 
     <!-- About Start - Plein écran -->
     <div class="about-section">
@@ -122,7 +120,7 @@
           <div class="about-col-text">
             <h2 class="display-5 mb-4 slogan-title">Parce que le style est une forme de bien-être</h2>
             <p class="mb-4">
-              Accessoria est votre destination dédiée au style et au bien-être.
+              My Style est votre destination dédiée au style et au bien-être.
               Nous proposons une sélection raffinée d'accessoires pour femmes et hommes, alliant élégance, originalité et qualité.
               Explorez nos collections inspirantes et trouvez les pièces qui sublimeront votre quotidien.
               Rejoignez-nous et adoptez un art de vivre où chaque détail compte.
@@ -133,55 +131,125 @@
     </div>
     <!-- About End -->
   </section>
-
+ <!-- Section Connexion - Plein écran -->
+  <section *ngIf="currentPage === 'connexion'" class="connexion-section">
+    <app-login></app-login>
+    
+    
+  </section>
   <!-- Section Produits - Plein écran -->
   <section *ngIf="currentPage === 'produits'" class="produits-section">
     <app-produit></app-produit>
   </section>
-
-  <!-- Section Contact - Plein écran -->
-  <section *ngIf="currentPage === 'contact'" class="contact-section">
-    <h2>Contactez-nous</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Nom">
-      <input type="email" placeholder="Email">
-      <textarea placeholder="Message"></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
-  </section>
-
-  <!-- Section Panier - Plein écran -->
+  <!-- Section Panier -->
   <section *ngIf="currentPage === 'panier'" class="panier-section">
-    <h2>Votre Panier</h2>
-    <div *ngIf="panier.length === 0" class="panier-vide">
-      <p>Votre panier est vide.</p>
-    </div>
-    <div *ngFor="let item of panier" class="product-card">
-      <h3>{{ item.nom }}</h3>
-      <p>Quantité : {{ item.quantite }}</p>
-      <p>Prix unitaire : {{ item.prix }}</p>
-      <button class="retirer-btn" (click)="retirerDuPanier(item)">Retirer</button>
-    </div>
-    <div *ngIf="panier.length > 0" class="panier-total">
-      Total général : {{ getTotalPanier() | number:'1.2-2' }} د.ت
-    </div>
+    <app-panier></app-panier>
   </section>
 
-  <!-- Section Connexion - Plein écran -->
-  <section *ngIf="currentPage === 'connexion'" class="connexion-section">
-    <h2>Connexion à votre compte</h2>
-    <form class="connexion-form">
-      <input placeholder="Nom d'utilisateur">
-      <input type="password" placeholder="Mot de passe">
-      <button type="submit">Se connecter</button>
-    </form>
+  <!-- Section Contact -->
+  <section *ngIf="currentPage === 'contact'" class="contact-section">
+    <div style="
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background:
+    linear-gradient(to bottom, #000 1px, transparent 1px),
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('assets/images/femmehomme1.jpg') no-repeat center top / cover;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+">
+  <h1 style="margin: 0; font-size: 2.8em; text-shadow: 0 2px 5px #000;">Contactez-nous</h1>
+  <p style="margin: 10px 0 0; font-style: italic; font-size: 1.3em;">
+    Une question, une idée ou un besoin ? Parlons-en, on est là pour vous !
+  </p>
+</div>
+
+
+
+
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+            <p class="fs-5 fw-bold" style="color: #5e17eb">Contactez-nous</p>
+            <h1 class="display-5 mb-5">
+              Si vous avez des questions, veuillez nous contacter!
+            </h1>
+            <p class="mb-4">
+              Nous sommes à votre écoute !
+              Si vous avez la moindre question, un besoin d'information ou une remarque, n'hésitez pas à nous contacter. Notre équipe est toujours disponible pour vous répondre avec plaisir.
+            </p>
+            
+            <!-- Informations de contact -->
+            <div class="contact-info">
+              <h4 class="mb-3" style="color: #5e17eb">Nos coordonnées :</h4>
+              
+              <div class="d-flex mb-3">
+                <i class="bi bi-geo-alt-fill me-3" style="color: #5e17eb; font-size: 1.5rem;"></i>
+                <div>
+                  <h5>Tunis :</h5>
+                  <p>Centre Ville</p>
+                </div>
+              </div>
+              
+              <div class="d-flex mb-3">
+                <i class="bi bi-geo-alt-fill me-3" style="color: #5e17eb; font-size: 1.5rem;"></i>
+                <div>
+                  <h5 class="mb-0 me-2" style="min-width: 120px;">Facebook / Instagram :</h5>
+                  <p class="mb-0">My Style</p>
+                </div>
+              </div>
+              
+              <div class="d-flex mb-3">
+                <i class="bi bi-envelope-fill me-3" style="color: #5e17eb; font-size: 1.5rem;"></i>
+                <div>
+                  <h5 class="mb-0 me-2" style="min-width: 120px;">Email :</h5>
+                  <p>My style&#64;gmail.com</p>
+                </div>
+              </div>
+              
+              <div class="d-flex">
+                <i class="bi bi-telephone-fill me-3" style="color: #5e17eb; font-size: 1.5rem;"></i>
+                <div>
+                  <h5 class="mb-0 me-2" style="min-width: 120px;">Téléphone :</h5>
+                  <p>+216 21 003 551</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 450px">
+            <div class="position-relative rounded overflow-hidden h-100">
+              <iframe
+                class="position-relative w-100 h-100"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                frameborder="0"
+                style="min-height: 450px; border: 0"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Footer - Plein écran -->
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h3>Accessoria</h3>
+        <h3>My Style</h3>
         <p>Votre boutique d'accessoires pour homme et femme. Élégance, tendance et originalité à portée de clic.</p>
       </div>
 
@@ -216,7 +284,7 @@
     </div>
 
     <div class="footer-bottom">
-      &copy; 2025 Accessoria. Tous droits réservés.
+      &copy; 2025 My Style. Tous droits réservés.
     </div>
   </footer>
 </div>

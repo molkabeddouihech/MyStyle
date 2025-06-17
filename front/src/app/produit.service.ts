@@ -13,7 +13,8 @@ export interface Produit {
 
 @Injectable({ providedIn: 'root' })
 export class ProduitService {
-  private apiUrl = 'http://localhost/project_angular/back/produits.php';
+  private apiUrl = 'http://localhost/projet_angular/back/produits.php';
+  
 
   constructor(private http: HttpClient) {}
 

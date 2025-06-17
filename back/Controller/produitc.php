@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../Model/produit.php';
 
-require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../../config.php';
 
 class ProduitController
 {
@@ -200,7 +200,7 @@ class ProduitController
             <th style="width:15%;">Genre</th>
             <th style="width:15%;">Stock</th>
             <th style="width:15%;">Prix</th>
-            <th style="width:25%;">Image</th>
+           
           </tr>';
 
     foreach ($produits as $produit) {
@@ -213,7 +213,6 @@ class ProduitController
         echo '<td>' . htmlspecialchars($produit['genre_produit'], ENT_QUOTES, 'UTF-8') . '</td>';
         echo '<td class="' . $stockClass . '" style="text-align:center;">' . $stockText . '<br><small>(' . htmlspecialchars($produit['stock_disponible_produit'], ENT_QUOTES, 'UTF-8') . ' unités)</small></td>';
         echo '<td class="price-cell" style="text-align:right;">' . number_format($produit['prix_produit'], 2, ',', ' ') . ' DT</td>';
-        echo '<td><img src="../../assets/img/' . htmlspecialchars($produit['image_produit'], ENT_QUOTES, 'UTF-8') . '" alt="image" width="50"></td>';
         echo '</tr>';
     }
 

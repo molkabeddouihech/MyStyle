@@ -4,15 +4,38 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
-  color: #000000;
+  color: #333;
   transition: background-color 0.3s, color 0.3s;
   overflow-x: hidden;
   width: 100%;
 }
 
 body.dark {
-  background-color: #000000;
+  background-color: #121212;
   color: #f5f5f5;
+}
+
+/* Slogan color */
+.slogan-color {
+  color: #5e17eb !important;
+}
+
+/* Custom button style */
+.custom-btn {
+  background-color: #5e17eb;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.custom-btn:hover {
+  background-color: #5e17eb;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Navigation */
@@ -55,7 +78,7 @@ nav button {
 
 nav button:hover {
   background-color: #444;
-  color: #ffc107;
+  color: #5e17eb;
 }
 
 /* Sections */
@@ -131,7 +154,7 @@ section {
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: #5e17eb;
   border: none;
   color: white;
 }
@@ -263,7 +286,7 @@ section {
 }
 
 .contact-form button {
-  background-color: #007bff;
+  background-color: #5e17eb;
   color: white;
   border: none;
   padding: 15px 30px;
@@ -274,7 +297,7 @@ section {
 }
 
 .contact-form button:hover {
-  background-color: #0056b3;
+  background-color: #5e17eb;
   transform: translateY(-3px);
 }
 
@@ -306,7 +329,7 @@ section {
 }
 
 .connexion-form button {
-  background-color: #007bff;
+  background-color: #5e17eb;
   color: white;
   border: none;
   padding: 15px 30px;
@@ -318,7 +341,7 @@ section {
 }
 
 .connexion-form button:hover {
-  background-color: #0056b3;
+  background-color: #5e17eb;
 }
 
 /* Footer */
@@ -357,7 +380,7 @@ footer {
   bottom: -10px;
   width: 50px;
   height: 2px;
-  background-color: #007bff;
+  background-color: #5e17eb;
 }
 
 .footer-section p {
@@ -372,7 +395,7 @@ footer {
 }
 
 .footer-section a:hover {
-  color: #007bff;
+  color: #5e17eb;
 }
 
 .social-links {
@@ -386,13 +409,13 @@ footer {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: #000000;
+  background-color: #333;
   border-radius: 50%;
   transition: all 0.3s;
 }
 
 .social-links a:hover {
-  background-color: #007bff;
+  background-color: #5e17eb;
   transform: translateY(-3px);
 }
 
@@ -400,7 +423,7 @@ footer {
   text-align: center;
   padding-top: 30px;
   margin-top: 30px;
-  border-top: 1px solid #000000;
+  border-top: 1px solid #444;
   color: #888;
 }
 
@@ -488,3 +511,120 @@ footer {
   animation-name: fadeInUp;
 }
 
+/* Bouton dark mode */
+.darkmode-btn {
+  background: linear-gradient(135deg, #222, #444);
+  color: #ffc107;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.darkmode-btn:hover {
+  background: linear-gradient(135deg, #444, #222);
+  color: #fff700;
+  transform: scale(1.08);
+}
+
+
+
+ .contact-info {
+    text-align: left; /* Aligne tout le contenu à gauche */
+    padding-left: 10px;
+  }
+
+  .contact-item {
+    margin-bottom: 15px;
+  }
+
+  .contact-label {
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+
+  .contact-value {
+    margin-left: 0;
+    color: #333;
+  }
+
+
+  /* Supprimer les marges globales */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+/* Empêche tout débordement horizontal */
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+
+/* Section Feature */
+.bg-white.shadow.d-flex.align-items-center.h-100.px-5 {
+    border-radius: 18px;
+    transition: box-shadow 0.3s, transform 0.3s;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    background: #fff;
+}
+
+.bg-white.shadow.d-flex.align-items-center.h-100.px-5:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+    transform: translateY(-6px) scale(1.03);
+}
+
+.btn-lg-square {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border-radius: 50%;
+    background: #f8f9fa;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-right: 16px;
+}
+
+.ps-3 h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: #222;
+}
+
+.ps-3 span {
+    color: #888;
+    font-size: 1rem;
+}
+
+@media (max-width: 991.98px) {
+    .bg-white.shadow.d-flex.align-items-center.h-100.px-5 {
+        min-height: 120px;
+        padding: 1.5rem;
+    }
+    .btn-lg-square {
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+    }
+}
+.btn-lg-square .fa {
+  color: #9736f1 !important; /* Violet vif */
+}

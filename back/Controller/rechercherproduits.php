@@ -1,5 +1,5 @@
 <?php
-include '../../config.php';
+require_once __DIR__ . '/../../config.php';
 
 $titre = $_GET['titre'] ?? '';
 $genre = $_GET['genre'] ?? 'all';
