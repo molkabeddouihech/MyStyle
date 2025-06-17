@@ -45,17 +45,19 @@ Avant de commencer, assurez-vous d’avoir installé :
 ```bash
 git clone https://github.com/TonGitHub/MyStyle.git
 cd MyStyle
----
+```
 3️⃣ Installer les dépendances
-bash
+```bash
 Copier
 Modifier
 npm install
+```
 4️⃣ Lancer l’application Angular
-bash
+```bash
 Copier
 Modifier
 ng serve
+```
 L’application sera accessible sur http://localhost:4200.
 
 📚 Utilisation
@@ -89,22 +91,25 @@ Forkez le dépôt
 
 Créez une branche
 
-bash
+vbash
 Copier
 Modifier
 git checkout -b feature/ma-nouvelle-fonction
+```
 Commitez vos modifications
 
-bash
+```bash
 Copier
 Modifier
 git commit -m "Ajout d'une nouvelle fonctionnalité"
+```
 Pushez la branche
 
-bash
+```bash
 Copier
 Modifier
 git push origin feature/ma-nouvelle-fonction
+```
 Créez une Pull Request
 
 Merci de respecter les bonnes pratiques de développement.
