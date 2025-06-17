@@ -65,7 +65,8 @@ Gérez les produits depuis le backend (CRUD + stock)
 
 Profitez d’une navigation fluide et rapide entre les pages grâce à Angular
 
-💡 Fonctionnalités
+💡 Fonctionnalités:
+
 ✅ Frontend en Angular (SPA)
 
 ✅ Composants réutilisables
