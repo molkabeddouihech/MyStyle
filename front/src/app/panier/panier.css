@@ -1,0 +1,532 @@
+/* Styles de base */
+.panier-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.panier-container.dark {
+  background-color: #2d2d2d;
+  color: #f0f0f0;
+}
+
+/* Dark mode toggle */
+.dark-mode-toggle {
+  background: #5e17eb;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 0.3s;
+}
+
+.dark-mode-toggle:hover {
+  background: #4a0fd3;
+}
+
+/* Panier vide */
+.panier-vide {
+  text-align: center;
+  padding: 3rem;
+}
+
+.btn-produits {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: #5e17eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.btn-produits:hover {
+  background: #4a0fd3;
+}
+
+/* Produits dans le panier */
+.produit-panier {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  align-items: center;
+}
+
+.dark .produit-panier {
+  border-bottom-color: #444;
+}
+
+.produit-image img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.produit-info {
+  flex: 1;
+}
+
+.prix-online {
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.dark .prix-online {
+  color: #aaa;
+}
+
+.quantite-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.quantite-controls button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.quantite-controls button:hover {
+  background: #f0f0f0;
+}
+
+.dark .quantite-controls button {
+  background: #444;
+  color: white;
+  border-color: #666;
+}
+
+.dark .quantite-controls button:hover {
+  background: #555;
+}
+
+.produit-prix {
+  text-align: right;
+}
+
+.prix {
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.btn-supprimer {
+  background: none;
+  border: none;
+  color: #ff4444;
+  cursor: pointer;
+  padding: 0.3rem;
+  transition: all 0.2s;
+}
+
+.btn-supprimer:hover {
+  transform: scale(1.1);
+}
+
+/* Code promo */
+.code-promo {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid #5e17eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.code-promo h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #5e17eb;
+  font-weight: 600;
+}
+
+.dark .code-promo {
+  background: #3a3a3a;
+}
+
+.input-group {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #5e17eb;
+  box-shadow: 0 0 0 2px rgba(94, 23, 235, 0.2);
+}
+
+.dark .input-group input {
+  background: #444;
+  color: white;
+  border-color: #555;
+}
+
+.btn-apply {
+  padding: 0 1.5rem;
+  background: #5e17eb;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-apply:hover {
+  background: #4a0fd3;
+}
+
+/* Totaux */
+.sous-total, .total {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.dark .sous-total, .dark .total {
+  background: #333;
+}
+
+.ligne {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.reduction {
+  color: #00c851;
+}
+
+.total {
+  font-size: 1.2rem;
+}
+
+.montant-total {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #5e17eb;
+}
+
+.dark .montant-total {
+  color: #8a5aeb;
+}
+
+/* Détails de la commande */
+.details-commande {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid #5e17eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark .details-commande {
+  background: #2d2d2d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.details-commande h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #5e17eb;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.details-commande h3::before {
+  content: "📋";
+  margin-right: 10px;
+}
+
+.details-commande h4 {
+  font-size: 1.2rem;
+  margin: 1.5rem 0 1rem 0;
+  color: #5e17eb;
+  font-weight: 500;
+}
+
+.commande-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.date-commande {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-commande label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.dark .date-commande label {
+  color: #ccc;
+}
+
+.date-commande span {
+  font-family: monospace;
+  color: #333;
+  font-weight: normal;
+}
+
+.dark .date-commande span {
+  color: #f0f0f0;
+}
+
+.articles {
+  grid-column: span 2;
+}
+
+.articles p {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.dark .articles p {
+  color: #ccc;
+}
+
+.articles ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.articles li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dark .articles li {
+  border-bottom-color: #444;
+}
+
+/* Styles pour le statut */
+.statut-commande {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.statut-commande strong {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.dark .statut-commande strong {
+  color: #ccc;
+}
+
+.statut-en-attente {
+  color: black;
+  font-weight: bold;
+}
+
+.dark .statut-en-attente {
+  color: #f0f0f0;
+}
+
+.dark .statut-commande {
+  border-top-color: #444;
+}
+
+/* Style pour la date et l'heure */
+.date-commande span {
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+}
+
+.date-commande span::before {
+  content: attr(data-date);
+}
+
+.date-commande span::after {
+  content: attr(data-time);
+  margin-top: 0.3rem;
+}
+
+/* Section Coordonnées */
+.coordonnees {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid #5e17eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.coordonnees h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #5e17eb;
+  font-weight: 600;
+}
+
+.dark .coordonnees {
+  background: #2d2d2d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark .coordonnees h3 {
+  color: #8a5aeb;
+}
+
+/* Style des champs de formulaire */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.dark .form-group label {
+  color: #f0f0f0;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.dark .form-group input {
+  background: #3a3a3a;
+  border-color: #444;
+  color: #f0f0f0;
+}
+
+/* Style des erreurs */
+.error-message {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.error-message::before {
+  content: "①";
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Style des champs invalides */
+.input-invalid {
+  border-color: #e74c3c !important;
+}
+
+/* Style spécifique pour le dark mode */
+.dark .input-invalid {
+  border-color: #e74c3c !important;
+}
+
+.dark .error-message {
+  color: #ff6b6b;
+}
+
+/* Bouton continuer */
+.btn-continuer {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background: #5e17eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.btn-continuer:hover {
+  background: #4a0fd3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark .btn-continuer:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .produit-panier {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .produit-prix {
+    text-align: left;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .coordonnees, .code-promo {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .panier-container {
+    padding: 1rem;
+  }
+  
+  .code-promo, .sous-total, .total, .details-commande, .coordonnees {
+    padding: 1.2rem;
+  }
+  
+  .quantite-controls button {
+    width: 25px;
+    height: 25px;
+  }
+}

@@ -1,0 +1,47 @@
+<div style="
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background:
+    linear-gradient(to bottom, #000 1px, transparent 1px),
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('assets/images/femmehomme1.jpg') no-repeat center top / cover;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+">
+  <h1 style="margin: 0; font-size: 2.8em; text-shadow: 0 2px 5px #000;">Nos produits</h1>
+  <p style="margin: 10px 0 0; font-style: italic; font-size: 1.3em;">
+    Parce que chaque détail compte, nos accessoires sont pensés pour révéler votre personnalité.
+  </p>
+</div>
+
+
+
+    <!-- Filtres -->
+    <div class="filtres" style="margin-top: 30px;">
+      <button [class.active]="genreFiltre === null" (click)="genreFiltre = null">Tous</button>
+      <button [class.active]="genreFiltre === 'femme'" (click)="filtrer('femme')">Femme</button>
+      <button [class.active]="genreFiltre === 'homme'" (click)="filtrer('homme')">Homme</button>
+    </div>
+
+    <div class="produits-grid">
+      <div class="produit-card" *ngFor="let p of produitsFiltres">
+        <img [src]="p.image" alt="{{p.titre}}">
+        <div class="produit-info">
+          <h3>{{ p.titre }}</h3>
+          <p class="prix">{{ p.prix }}</p>
+          
+        </div>
+        <button class="panier-btn" (click)="ajouterAuPanier(p)" title="Ajouter au panier">
+          <span class="material-icons">shopping_cart</span>
+        </button>
+      </div>
+    </div>

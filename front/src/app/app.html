@@ -1,0 +1,297 @@
+<div [class.dark]="darkMode">
+  <!-- Navigation -->
+  <nav>
+    <img src="assets/images/logo.png" alt="Logo My Style" class="logo-img">
+    
+    <div class="nav-right">
+      <button (click)="changePage('home')">Accueil</button>
+      <button (click)="changePage('produits')">Produits</button>
+      <button (click)="changePage('contact')">Contact</button>
+      <button (click)="changePage('panier')">
+        🛒 Panier ({{ getNombreTotalProduits() }})
+      </button>
+
+      <button class="action-btn" (click)="changePage('connexion')">
+        <span class="icon">👤</span>
+      </button> 
+    </div>
+  </nav>
+
+  <!-- Hero Section - Plein écran -->
+  <section *ngIf="currentPage === 'home'" class="hero">
+    <!-- Carousel plein écran -->
+    <div class="carousel-container">
+      <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <img class="carousel-img" src="assets/images/femmehomme1.jpg" alt="Image">
+            <div class="carousel-caption">
+              <div class="text-center text-white">
+                <h1 class="display-1 mb-3 animated slideInDown">Accessoires de Rêve</h1>
+                <p class="lead mb-4 animated fadeInUp">
+                  "Découvrez notre collection élégante et tendance d'accessoires pour hommes et femmes – pour affirmer votre style au quotidien."
+                </p>
+                <div class="d-flex justify-content-center gap-3">
+                  <button class="btn btn-primary" (click)="changePage('produits')">Découvrir la Collection</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <img class="carousel-img" src="assets/images/femmehomme2.jpg" alt="Image">
+            <div class="carousel-caption">
+              <div class="text-center text-white">
+                <h1 class="display-1 mb-3 animated slideInDown">"Ton style, ton attitude, nos accessoires."</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Top Feature Start - Plein écran -->
+    <div class="top-feature">
+      <div class="feature-container">
+        <div class="feature-row">
+          <div class="feature-col">
+            <div class="feature-item">
+              <div class="d-flex">
+                <div class="feature-icon">
+                  <i class="fa fa-times text-primary"></i>
+                </div>
+                <div class="ps-3">
+                    <br>
+                  <h4>Pas de coût caché</h4>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-col">
+            <div class="feature-item">
+              <div class="d-flex">
+                <div class="feature-icon">
+                  <i class="fa fa-users text-primary"></i>
+                </div>
+                <div class="ps-3">
+                    <br>
+                  <h4>Équipe dédiée</h4>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-col">
+            <div class="feature-item">
+              <div class="d-flex">
+                <div class="feature-icon">
+                  <i class="fa fa-phone text-primary"></i>
+                </div>
+                <div class="ps-3">
+                    <br>
+                  <h4>Disponible 24h/24 et 7j/7</h4>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Top Feature End -->
+
+    <!-- About Start - Plein écran -->
+    <div class="about-section">
+      <div class="about-container">
+        <div class="about-row">
+          <div class="about-col-img">
+            <img class="about-img" src="assets/images/mw.jpg" alt="Image illustrative à propos de nous">
+          </div>
+          <div class="about-col-text">
+            <h2 class="display-5 mb-4 slogan-title">Parce que le style est une forme de bien-être</h2>
+            <p class="mb-4">
+              My Style est votre destination dédiée au style et au bien-être.
+              Nous proposons une sélection raffinée d'accessoires pour femmes et hommes, alliant élégance, originalité et qualité.
+              Explorez nos collections inspirantes et trouvez les pièces qui sublimeront votre quotidien.
+              Rejoignez-nous et adoptez un art de vivre où chaque détail compte.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About End -->
+  </section>
+
+  <!-- Section Produits -->
+  <section *ngIf="currentPage === 'produits'" class="produits-section">
+    <app-produit></app-produit>
+  </section>
+
+  <!-- Section Panier -->
+  <section *ngIf="currentPage === 'panier'" class="panier-section">
+    <app-panier></app-panier>
+  </section>
+
+  <!-- Section Contact -->
+  <section *ngIf="currentPage === 'contact'" class="contact-section">
+    <div style="
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background:
+    linear-gradient(to bottom, #000 1px, transparent 1px),
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('assets/images/femmehomme1.jpg') no-repeat center top / cover;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+">
+  <h1 style="margin: 0; font-size: 2.8em; text-shadow: 0 2px 5px #000;">Contactez-nous</h1>
+  <p style="margin: 10px 0 0; font-style: italic; font-size: 1.3em;">
+    Une question, une idée ou un besoin ? Parlons-en, on est là pour vous !
+  </p>
+</div>
+
+
+
+
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+            <p class="fs-5 fw-bold" style="color: #5e17eb">Contactez-nous</p>
+            <h1 class="display-5 mb-5">
+              Si vous avez des questions, veuillez nous contacter!
+            </h1>
+            <p class="mb-4">
+              Nous sommes à votre écoute !
+              Si vous avez la moindre question, un besoin d'information ou une remarque, n'hésitez pas à nous contacter. Notre équipe est toujours disponible pour vous répondre avec plaisir.
+            </p>
+            
+            <!-- Informations de contact -->
+            <div class="contact-info">
+              <h4 class="mb-3" style="color: #5e17eb">Nos coordonnées :</h4>
+              
+              <div class="d-flex mb-3">
+                <i class="bi bi-geo-alt-fill me-3" style="color: #5e17eb; font-size: 1.5rem;"></i>
+                <div>
+                  <h5>Tunis :</h5>
+                  <p>Centre Ville</p>
+                </div>
+              </div>
+              
+              <div class="d-flex mb-3">
+                <i class="bi bi-geo-alt-fill me-3" style="color: #5e17eb; font-size: 1.5rem;"></i>
+                <div>
+                  <h5 class="mb-0 me-2" style="min-width: 120px;">Facebook / Instagram :</h5>
+                  <p class="mb-0">My Style</p>
+                </div>
+              </div>
+              
+              <div class="d-flex mb-3">
+                <i class="bi bi-envelope-fill me-3" style="color: #5e17eb; font-size: 1.5rem;"></i>
+                <div>
+                  <h5 class="mb-0 me-2" style="min-width: 120px;">Email :</h5>
+                  <p>My style&#64;gmail.com</p>
+                </div>
+              </div>
+              
+              <div class="d-flex">
+                <i class="bi bi-telephone-fill me-3" style="color: #5e17eb; font-size: 1.5rem;"></i>
+                <div>
+                  <h5 class="mb-0 me-2" style="min-width: 120px;">Téléphone :</h5>
+                  <p>+216 21 003 551</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 450px">
+            <div class="position-relative rounded overflow-hidden h-100">
+              <iframe
+                class="position-relative w-100 h-100"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                frameborder="0"
+                style="min-height: 450px; border: 0"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section Connexion - Plein écran -->
+  <section *ngIf="currentPage === 'connexion'" class="connexion-section">
+    <app-login></app-login>
+    
+    
+  </section>
+
+  <!-- Footer - Plein écran -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>My Style</h3>
+        <p>Votre boutique d'accessoires pour homme et femme. Élégance, tendance et originalité à portée de clic.</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Liens rapides</h3>
+        <p><a href="#" (click)="changePage('home'); $event.preventDefault()">Accueil</a></p>
+        <p><a href="#" (click)="changePage('produits'); $event.preventDefault()">Produits</a></p>
+        <p><a href="#" (click)="changePage('panier'); $event.preventDefault()">Panier</a></p>
+        <p><a href="#" (click)="changePage('contact'); $event.preventDefault()">Contact</a></p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Suivez-nous</h3>
+        <div class="social-links">
+          <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+            <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+              <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-2.9h2v-2.2c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2v1.9h2.5l-.4 2.9h-2.1v7A10 10 0 0 0 22 12z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+            <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+              <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zm0 2a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm4.8-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0z"/>
+            </svg>
+          </a>
+          <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+            <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+              <path d="M22.5 5.9c-.8.3-1.6.5-2.5.6a4.3 4.3 0 0 0 1.9-2.4 8.6 8.6 0 0 1-2.7 1 4.3 4.3 0 0 0-7.3 3.9 12.2 12.2 0 0 1-8.9-4.5 4.3 4.3 0 0 0 1.3 5.7c-.7 0-1.3-.2-1.8-.5v.1a4.3 4.3 0 0 0 3.5 4.2 4.2 4.2 0 0 1-1.9.1 4.3 4.3 0 0 0 4 3 8.7 8.7 0 0 1-6.3 1.7 12.3 12.3 0 0 0 6.6 1.9c8 0 12.4-6.6 12.4-12.4v-.6a8.8 8.8 0 0 0 2.2-2.3z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2025 My Style. Tous droits réservés.
+    </div>
+  </footer>
+</div>

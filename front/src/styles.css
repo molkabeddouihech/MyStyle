@@ -1,0 +1,302 @@
+/* === Global === */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fafb;
+}
+
+/* === NAVBAR === */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  background-color: #222;
+  color: white;
+}
+
+.logo-img {
+  height: 40px;
+  margin-right: 20px;
+}
+
+.nav-right {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* === HERO SECTION === */
+.hero {
+  position: relative;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.gradient-text {
+  color: #5e17eb; /* Changé de rose à #5e17eb */
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: #f3f4f6;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* === HERO BUTTONS === */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: #5e17eb !important; /* Changé de dégradé rose à #5e17eb */
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #5e17eb !important; /* Version plus foncée pour le hover */
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(94, 23, 235, 0.3) !important;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #5e17eb; /* Changé de rose à #5e17eb */
+  border: 2px solid #5e17eb; /* Changé de rose à #5e17eb */
+}
+
+.btn-outline:hover {
+  background: #f0e6ff; /* Couleur de fond plus claire pour le hover */
+  transform: translateY(-2px);
+}
+
+/* === CAROUSEL === */
+.carousel-caption {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* === FLOATING ELEMENTS === */
+.floating-element {
+  position: absolute;
+  font-size: 2rem;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.floating-1 { top: 20%; left: 10%; animation-name: bounce; }
+.floating-2 { top: 25%; right: 10%; animation-name: pulse; }
+.floating-3 { bottom: 50%; left: 15%; animation-name: bounce; animation-delay: 0.5s; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #111;
+  color: #f1f1f1;
+  padding: 4rem 5% 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #fff;
+  border-bottom: 2px solid #5e17eb; /* Changé de #6c63ff à #5e17eb */
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #5e17eb; /* Changé de #6c63ff à #5e17eb */
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: #ccc;
+  font-size: 1.5rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+  color: #5e17eb; /* Changé de #6c63ff à #5e17eb */
+  transform: scale(1.2);
+}
+
+.social-links svg {
+  transition: transform 0.3s ease, fill 0.3s ease;
+  cursor: pointer;
+}
+
+.social-links a:hover svg {
+  transform: scale(1.1);
+  fill: #5e17eb; /* Changé pour correspondre à la nouvelle couleur */
+}
+
+.footer-bottom {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* === TOP FEATURE === */
+.top-feature .btn-lg-square {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-right: 16px;
+}
+
+.top-feature h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.top-feature .bg-white {
+  border-radius: 18px;
+}
+
+/* === ABOUT SECTION === */
+.container-xxl {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.display-5 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.img-fluid.rounded {
+  box-shadow: 0 8px 32px rgba(60,60,100,0.10);
+  border-radius: 18px;
+}
+
+.about-right-card {
+  margin-left: auto;
+  background: #fff;
+  border: 2px solid #111;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 32px 28px;
+  max-width: 100%;
+  text-align: left;
+}
+
+.slogan-title {
+  color: #5e17eb !important; /* Changé de rose à #5e17eb */
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-align: center;
+  background: none !important; /* Supprimé le dégradé rose */
+  -webkit-text-fill-color: initial !important;
+  margin-top: 24px;
+  margin-bottom: 32px;
+  text-shadow: none !important;
+}
