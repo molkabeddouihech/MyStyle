@@ -48,14 +48,10 @@ cd MyStyle
 ```
 3️⃣ Installer les dépendances
 ```bash
-Copier
-Modifier
 npm install
 ```
 4️⃣ Lancer l’application Angular
 ```bash
-Copier
-Modifier
 ng serve
 ```
 L’application sera accessible sur http://localhost:4200.
@@ -87,34 +83,27 @@ Profitez d’une navigation fluide et rapide entre les pages grâce à Angular
 🤝 Contribution
 Les contributions sont les bienvenues ! 🙌
 
-Forkez le dépôt
+1.Forkez le dépôt
 
-Créez une branche
+2.Créez une branche
 
-vbash
-Copier
-Modifier
+```bash
 git checkout -b feature/ma-nouvelle-fonction
 ```
-Commitez vos modifications
+3.Commitez vos modifications
 
 ```bash
-Copier
-Modifier
 git commit -m "Ajout d'une nouvelle fonctionnalité"
 ```
-Pushez la branche
+4.Pushez la branche
 
 ```bash
-Copier
-Modifier
 git push origin feature/ma-nouvelle-fonction
 ```
-Créez une Pull Request
+5.Créez une Pull Request
 
 Merci de respecter les bonnes pratiques de développement.
 
 📄 Licence
 Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus d'informations.
-
 ---
