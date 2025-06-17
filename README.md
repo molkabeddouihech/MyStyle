@@ -45,6 +45,7 @@ Avant de commencer, assurez-vous d’avoir installé :
 ```bash
 git clone https://github.com/TonGitHub/MyStyle.git
 cd MyStyle
+---
 3️⃣ Installer les dépendances
 bash
 Copier
