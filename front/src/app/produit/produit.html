@@ -2,7 +2,7 @@
 <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container text-center py-5">
         <h1 class="display-3 text-white mb-4 animated slideInDown">"Votre coup de cœur vous attend"</h1>
-        <h6 class="kokok">Naturel / Excellence / Rapide</h6>
+        <h6 class="kokok">Un accessoire intemporel qui complète toutes vos tenues, du quotidien aux grandes occasions.</h6>
     </div>
 </div>
 <!-- Page Header End -->
@@ -85,13 +85,13 @@
 <!-- Grille des produits -->
 <div class="produits-grid">
   <div class="produit-card" *ngFor="let p of produitsFiltres">
-    <img [src]="'http://localhost/project_angular/back/View/img/' + p.image" alt="{{ p.titre }}">
+    <img [src]="'http://localhost/projet_angular/back/View/img/' + p.image" alt="{{ p.titre }}">
     <div class="produit-info">
       <h3>{{ p.titre }}</h3>
       <p class="prix">{{ p.prix }} DT</p>
     </div>
     <button class="panier-btn" (click)="ajouterAuPanier(p)" title="Ajouter au panier">
-      <span class="material-icons">shopping_cart</span>
-    </button>
+  <span class="material-icons">shopping_cart</span>
+</button>
   </div>
 </div>
