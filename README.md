@@ -106,5 +106,6 @@ git push origin feature/ma-nouvelle-fonction
 Merci de respecter les bonnes pratiques de développement.
 
 📄 Licence
+
 Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus d'informations.
 ---
